@@ -1,0 +1,18 @@
+[package]
+name = "nrf54l15-blinky"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+cortex-m = { version = "0.7", features = ["critical-section-single-core"] }
+embassy-executor = { git = "https://github.com/embassy-rs/embassy", features = ["platform-cortex-m", "executor-thread"] }
+embassy-time = { git = "https://github.com/embassy-rs/embassy", features = ["defmt"] }
+embassy-nrf = { git = "https://github.com/embassy-rs/embassy", features = ["defmt", "nrf54l15-app-s", "gpiote", "time-driver-grtc", "unstable-pac"] }
+
+defmt = "1.0.1"
+defmt-rtt = "1.0.0"
+panic-probe = { version = "1.0.0", features = ["print-defmt"] }
+cortex-m-rt = "0.7"
+
+[profile.release]
+debug = 2

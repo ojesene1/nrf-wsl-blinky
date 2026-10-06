@@ -1,0 +1,9 @@
+[target.thumbv8m.main-none-eabihf]
+runner = "probe-rs run --chip nRF54L15" # Using probe-rs for immediate flashing
+rustflags = [
+  "-C", "link-arg=-Tlink.x",
+  "-C", "link-arg=-Tdefmt.x",
+]
+
+[build]
+target = "thumbv8m.main-none-eabihf"
